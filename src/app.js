@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import Cropper from 'react-cropper';
-import 'cropperjs/dist/cropper.css'; // see installation section above for versions of NPM older than 3.0.0
-// If you choose not to use import, you need to assign Cropper to default
-// var Cropper = require('react-cropper').default
-var base64Img = require('base64-img');
+import 'cropperjs/dist/cropper.css'; 
 class App extends Component {
 
 
@@ -13,7 +10,7 @@ class App extends Component {
   }
   _crop(){
 
-    // image in dataUrl
+   
     console.log(this.refs.cropper.getCroppedCanvas().toDataURL());
   this.setState({path:this.refs.cropper.getCroppedCanvas().toDataURL()})
   
@@ -26,25 +23,7 @@ class App extends Component {
       {id:"https://s.gravatar.com/avatar/695e3489eb762ae2bf94f3e1e2b8ce2c?size=100&default=retro"}
       ]
       var i=0;
-    function toDataURL(src, callback, outputFormat) {
-      var img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = function() {
-        var canvas = document.createElement('CANVAS');
-        var ctx = canvas.getContext('2d');
-        var dataURL;
-        canvas.height = this.naturalHeight;
-        canvas.width = this.naturalWidth;
-        ctx.drawImage(this, 0, 0);
-        dataURL = canvas.toDataURL(outputFormat);
-        callback(dataURL);
-      };
-      img.src = src;
-      // if (img.complete || img.complete === undefined) {
-      //   img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
-      //   img.src = src;
-      // }
-    }
+   
     
     
     
